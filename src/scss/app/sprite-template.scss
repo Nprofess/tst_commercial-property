@@ -1,0 +1,13 @@
+.icn {
+  width: 1em;
+  height: 1em;
+
+  display: inline-block;
+  fill: currentColor;
+}
+
+{{#shapes}}
+.icn-{{base}} {
+  width:({{width.inner}}/{{height.inner}})*1em;
+}
+{{/shapes}}

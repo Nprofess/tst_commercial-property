@@ -1,0 +1,9 @@
+{
+	"proxy": "",
+	"ftp": {
+		"templatePath": "/tmpl/main",
+		"ftpHost": "",
+		"ftpUser": "",
+		"ftpPassword": ""
+	}
+}
