@@ -28,6 +28,10 @@
     background-color: $white;
     color: $black;
 
+    @media (min-width: $media_small) and (max-width: $media_medium) {
+      padding-right: em(10, $fz);
+    }
+
     &:focus {
       outline: none;
       border: 0;

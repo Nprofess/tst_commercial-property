@@ -5,8 +5,7 @@
 {% endmacro %}
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-         
+    <head>         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">      
         <title>Commercial property</title>
@@ -21,39 +20,47 @@
     <body class="page">
         <header class="header">
             <div class="container header__container">
-                <a href="#" class="logo">
+                <a href="#" class="logo header__logo">
                     <img src="/img/logo.svg" alt="Логотип" class="logo__img" width="200" height="50">
                 </a>
                 <nav class="header__nav nav">
-                    <ul class="nav__list">
-                        <li class="nav__item nav__item--is-active">
-                            <a href="#" class="nav__link">
-                                Купить
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#" class="nav__link">
-                                Снять
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#" class="nav__link">
-                                Инвестировать
-                            </a>        
-                        </li>
-                        <li class="nav__item">
-                            <a href="#" class="nav__link">
-                                Услуги
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#" class="nav__link">
-                                Контакты
-                            </a>
-                        </li>
-                    </ul>             
+                    <button type="button" class="nav__toggle nav-toggle" aria-label="Меню">
+                        <span class="nav-toggle__bar"></span>
+                        <span class="nav-toggle__bar"></span>
+                        <span class="nav-toggle__bar"></span>
+                      </button>
+                      <div class="nav__container">
+                        <ul class="nav__list">
+                            <li class="nav__item nav__item--is-active">
+                                <a href="#" class="nav__link">
+                                    Купить
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Снять
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Инвестировать
+                                </a>        
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Услуги
+                                </a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#" class="nav__link">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>             
+                      </div>
+                    
                 </nav>
-                <ul class="user-nav">
+                <ul class="header__user-nav user-nav">
                     <li class="user-nav__item">
                         <a class="user-nav__link" href="#">
                             <span class="user-nav__icon user-nav__icon--letter">                                
@@ -80,51 +87,58 @@
            
         </header>
         <main>
-            <section class="hero">
-                <div class="hero__container container">
-                    <div class="hero__content">
-                        <h1 class="hero__title"><span class="hero__slogan">Лучший выбор</span> коммерческой недвижимости</h1>
-                        <p class="hero__subtitle">Актуальные предложения рынка недвижимости по всему миру</p>
-                        <a class="hero__link btn btn--size-l btn--theme-accent" href="#">
-                            <span class="btn__caption">
-                                Узнать больше
-                            </span>
-                        </a>
-                    </div>
-    
-                    <form class="property-form hero__form" action="https://echo.htmlacademy.ru/" method="GET">
+            <section class="hero-form">
+                <div class="hero-form__container">
+                    <section class="hero">
+                        <div class="hero__container container">
+                            <div class="hero__content">
+                                <div class="hero__heading">
+                                    <h1 class="hero__title hero__title--main">Лучший выбор</h1>
+                                    <p class="hero__title hero__title--second">коммерческой недвижимости</p>
+                                </div>
+
+                                <p class="hero__subtitle">Актуальные предложения рынка недвижимости по всему миру</p>
+                                <a class="hero__link btn btn--size-l btn--theme-accent" href="#">
+                                    <span class="btn__caption">
+                                        Узнать больше
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </section>   
+                    <form class="property-form hero-form__form " action="https://echo.htmlacademy.ru/" method="GET">
                         <fieldset class="choosing-property property-form__item">
                             <ul class="choosing-property__list">
                                 <li class="choosing-property__item">
                                     <input class="choosing-property__input visually-hidden" type="radio" name="choosing-property" value="rent" id="rent" checked>
                                     <label class="choosing-property__label" for="rent">Снять</label>
-                                </li> 
+                                 </li> 
                                 <li class="choosing-property__item">
                                     <input class="choosing-property__input visually-hidden" type="radio" name="choosing-property" value="buy" id="buy">
                                     <label class="choosing-property__label" for="buy">Купить</label>
                                 </li>
                             </ul>                            
                         </fieldset>
-    
+
                         <fieldset class="select">
                             <ul class="select__list property-form__item">
                                 <li class="select__item s-selectric">
-                                    <label for="country" class="property-form__label" >Страна</label>
-                                    <select class="select-country" name="country" id="country" tabindex="0">
-                                        <option value="Egypt">Египет</option>
-                                        <option value="Georgia">Грузия</option>
-                                        <option value="Turkey">Турция</option>
-                                        <option value="Greece">Греция</option>
-                                        <option selected class="selected" value="Russia">Россия</option>
-                                        <option value="Czech">Чехия</option>
-                                        <option value="Czech">Армения</option>
-                                        <option value="Czech">Чехия</option>
-                                        <option value="Bahamas">Багамы</option>
-                                        <option value="Bangladesh">Бангладеш</option>
-                                        <option value="Belgium">Бельгия</option>
-                                    </select> 
+                                    <label for="country" class="property-form__label">Страна</label>
+                                        <select class="select-country" name="country" id="country" tabindex="0">
+                                            <option value="Egypt">Египет</option>
+                                            <option value="Georgia">Грузия</option>
+                                            <option value="Turkey">Турция</option>
+                                            <option value="Greece">Греция</option>
+                                            <option selected class="selected" value="Russia">Россия</option>
+                                            <option value="Czech">Чехия</option>
+                                            <option value="Czech">Армения</option>
+                                            <option value="Czech">Чехия</option>
+                                            <option value="Bahamas">Багамы</option>
+                                            <option value="Bangladesh">Бангладеш</option>
+                                            <option value="Belgium">Бельгия</option>
+                                        </select> 
                                 </li>
-
+            
                                 <li class="select__item s-selectric">
                                     <label for="category" class="property-form__label">Категория</label>                                     
                                     <select class="select-category" name="category" id="category">
@@ -135,33 +149,35 @@
                                 </li>
                             </ul>
                         </fieldset>
-                        
-                        <fieldset class="property-form__item range property-form__range">
-                            <label class="property-form__label">Площадь</label>
-                            <div class="range__bar">
-                                <div id="range__slider"></div>
-                            </div>
-                            <div class="range__span">
-                                <span class="range__span-value">0</span>
-                                <span class="range__span-value">500 000</span>
-                            </div>
-                        </fieldset>
-    
-                        <fieldset class="property-form__item value">
-                            <label class="property-form__label">Цена руб. в месяц</label>
-                            <div class="value__inputs">
-                                <input class="value__input" type="number" name="min-price" placeholder="ОТ" aria-label="Минимальная цена">
-                                <input class="value__input" type="number" name="max-price" placeholder="ДО" aria-label="Максимальная цена">
-                            </div>      
-                        </fieldset>
-                       
+
+                        <div class="range-value">
+                            <fieldset class="property-form__item range property-form__range">
+                                <label class="property-form__label">Площадь</label>
+                                <div class="range__bar">
+                                    <div id="range__slider"></div>
+                                </div>
+                                <div class="range__span">
+                                    <span class="range__span-value">0</span>
+                                    <span class="range__span-value">500 000</span>
+                                </div>
+                            </fieldset>
+            
+                            <fieldset class="property-form__item value">
+                                <label class="property-form__label">Цена руб. в месяц</label>
+                                <div class="value__inputs">
+                                    <input class="value__input" type="number" name="min-price" placeholder="ОТ" aria-label="Минимальная цена">
+                                    <input class="value__input" type="number" name="max-price" placeholder="ДО" aria-label="Максимальная цена">
+                                </div>      
+                            </fieldset>
+                        </div>
+
                         <fieldset class="property-form__item property-form__item--filter filter">
                             <p class="filter__title">Дополнительные фильтры</p>
                             <button type="button" class="filter__button">
                                 <span class="filter__icon">
-                                    {{ icn('filter') }}
+                                    {{ icn('filter') }}        
                                 </span>
-                            </button>                          
+                                </button>                          
                         </fieldset>
                         <button type="submit" class="btn btn--size-m property-form__submit">
                             <span class="btn__caption">Найти</span>
@@ -169,16 +185,16 @@
                     </form>
                 </div>
             </section>
-
+         
             <section class="advantages">
                 <div class="advantages__container container">
                     <h2 class="visually-hidden">Преимущества</h2>
-                    <ul class="advantages__list">
-                        <li class="advantages__item advantages-item">  
+                    <div class="advantages__list advantages-slider js-advantages-slider">
+                        <div class="advantages__item advantages-item">  
                             <div class="advantages-item__description">
                                 <svg class="advantages-item__icon advantages-item__icon--realty">
                                     <use xlink:href="#realty"></use>
-                                </svg>                            
+                                </svg>                                                      
                                 <h3 class="advantages-item__title">Представление интересов покупателя</h3>
                             </div>                                
                             
@@ -189,12 +205,13 @@
                                 <li class="advantages-item__elem">SWOT-анализ</li>
                                 <li class="advantages-item__elem">Поддержка и консультации на всех этапах сделки</li>
                             </ul>
-                        </li>
-                        <li class="advantages__item advantages-item">  
+                        </div>
+                        
+                        <div class="advantages__item advantages-item">  
                             <div class="advantages-item__description">
                                 <svg class="advantages-item__icon advantages-item__icon--interest">
                                     <use xlink:href="#interest"></use>
-                                </svg>                            
+                                </svg>                                                      
                                 <h3 class="advantages-item__title">Управление недвижимостью</h3>
                             </div>                                                                                   
                             
@@ -204,12 +221,12 @@
                                 <li class="advantages-item__elem">Оценка текущей деятельности</li>
                                 <li class="advantages-item__elem">Реконцепция актива</li>
                             </ul>
-                        </li>
-                        <li class="advantages__item advantages-item">       
+                        </div>
+                        <div class="advantages__item advantages-item">       
                             <div class="advantages-item__description">
                                 <svg class="advantages-item__icon advantages-item__icon--investment">
                                     <use xlink:href="#investment"></use>
-                                </svg>                            
+                                </svg>                                                     
                                 <h3 class="advantages-item__title">Инвестиции в недвижимость</h3>
                             </div>                                                 
                             
@@ -219,7 +236,55 @@
                                 <li class="advantages-item__elem">Покупка недвижимости под редевелопмент</li>
                                 <li class="advantages-item__elem">Соинвестирование строительства</li>
                             </ul>
-                        </li>
+                        </div>
+
+                        <div class="advantages__item advantages-item">  
+                            <div class="advantages-item__description">
+                                <svg class="advantages-item__icon advantages-item__icon--realty">
+                                    <use xlink:href="#realty"></use>
+                                </svg>                                                      
+                                <h3 class="advantages-item__title">Представление интересов покупателя</h3>
+                            </div>                                
+                            
+                            <ul class="advantages-item__list">
+                                <li class="advantages-item__elem">Анализ рынка</li>
+                                <li class="advantages-item__elem">Подбор объектов</li>
+                                <li class="advantages-item__elem">Технический аудит</li>
+                                <li class="advantages-item__elem">SWOT-анализ</li>
+                                <li class="advantages-item__elem">Поддержка и консультации на всех этапах сделки</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="advantages__item advantages-item">  
+                            <div class="advantages-item__description">
+                                <svg class="advantages-item__icon advantages-item__icon--interest">
+                                    <use xlink:href="#interest"></use>
+                                </svg>                                                      
+                                <h3 class="advantages-item__title">Управление недвижимостью</h3>
+                            </div>                                                                                   
+                            
+                            <ul class="advantages-item__list">
+                                <li class="advantages-item__elem">Разработка стратегии</li>
+                                <li class="advantages-item__elem">Повышение доходности</li>
+                                <li class="advantages-item__elem">Оценка текущей деятельности</li>
+                                <li class="advantages-item__elem">Реконцепция актива</li>
+                            </ul>
+                        </div>
+                        <div class="advantages__item advantages-item">       
+                            <div class="advantages-item__description">
+                                <svg class="advantages-item__icon advantages-item__icon--investment">
+                                    <use xlink:href="#investment"></use>
+                                </svg>                                                     
+                                <h3 class="advantages-item__title">Инвестиции в недвижимость</h3>
+                            </div>                                                 
+                            
+                            <ul class="advantages-item__list">
+                                <li class="advantages-item__elem">Инвестиции во все сегменты недвижимости</li>
+                                <li class="advantages-item__elem">Арендный бизнес с высокой доходностью</li>
+                                <li class="advantages-item__elem">Покупка недвижимости под редевелопмент</li>
+                                <li class="advantages-item__elem">Соинвестирование строительства</li>
+                            </ul>
+                        </div>
                     </ul>
                 </div>
                 
@@ -240,7 +305,7 @@
                         </li>
                         <li class="offers__item offers__all">
                             <a href="#" class="offers__link">
-                                <img class="offers__img" src="img/offer-img-2.jpg" width="275" height="150" alt="Все предложения">
+                                <img class="offers__img offers__img--s" src="img/offer-img-2.jpg" width="275" height="150" alt="Все предложения">
                                 <div class="offers__content offers-content">
                                     <p class="offers-content__title">Все предложения</p>
                                     <p class="offers-content__subtitle">10 325 предложений</p>
@@ -249,7 +314,7 @@
                         </li>
                         <li class="offers__item">
                             <a href="#" class="offers__link">
-                                <img class="offers__img" src="img/offer-img-3.jpg" width="275" height="150" alt="Предложения по Северной Америке">
+                                <img class="offers__img offers__img--s" src="img/offer-img-3.jpg" width="275" height="150" alt="Предложения по Северной Америке">
                                 <div class="offers__content offers-content">
                                     <p class="offers-content__title">Северная Америка</p>
                                     <p class="offers-content__subtitle">1 370 предложений</p>
@@ -258,7 +323,7 @@
                         </li>
                         <li class="offers__item">
                             <a href="#" class="offers__link">
-                                <img class="offers__img" src="img/offer-img-4.jpg" width="275" height="150" alt="Предложения по Южной Америке">
+                                <img class="offers__img offers__img--s" src="img/offer-img-4.jpg" width="275" height="150" alt="Предложения по Южной Америке">
                                 <div class="offers__content offers-content">
                                     <p class="offers-content__title">Южная Америка</p>
                                     <p class="offers-content__subtitle">260 предложений</p>
@@ -267,7 +332,7 @@
                         </li>
                         <li class="offers__item">
                             <a href="#" class="offers__link">
-                                <img class="offers__img" src="img/offer-img-5.jpg" width="275" height="150" alt="Предложения по Азии">
+                                <img class="offers__img offers__img--s" src="img/offer-img-5.jpg" width="275" height="150" alt="Предложения по Азии">
                                 <div class="offers__content offers-content">
                                     <p class="offers-content__title">Азия</p>
                                     <p class="offers-content__subtitle">820 предложений</p>
@@ -276,7 +341,11 @@
                         </li>
                         <li class="offers__item">
                             <a href="#" class="offers__link">
-                                <img class="offers__img" src="img/offer-img-6.jpg" width="275" height="400" alt="Предложения по Австралии">
+                                <picture>
+                                    <source media="(max-width: 1000px)" srcset="img/offer-img-6-s.jpg">
+                                    <img class="offers__img offers__img--s" src="img/offer-img-6.jpg" width="275" height="400" alt="Предложения по Австралии">
+                                  </picture>
+                                
                                 <div class="offers__content offers-content">
                                     <p class="offers-content__title">Австралия</p>
                                     <p class="offers-content__subtitle">25 предложений</p>
@@ -287,7 +356,8 @@
                     <a href="#" class="btn offers__btn btn--size-l btn--theme-accent">
                         <span class="btn__caption">
                             Все предложения
-                        </span> </a>
+                        </span>
+                    </a>
                 </div>                
             </section>        
 
@@ -295,4 +365,3 @@
     <script src="/js/app.min.js"></script>
     </body>
 </html>
-
