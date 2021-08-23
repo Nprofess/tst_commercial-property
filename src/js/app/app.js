@@ -1,20 +1,62 @@
-
 (function ($) {
     $(document).ready(() => {
         $('.js-advantages-slider').slick({
-            dots: true,
-            arrows: true,
+            dots: false,
+            arrows: false,
             slidesToShow: 3,
             variableWidth: true,
-            // slidesToScroll: 3,
-            // infinite: false,
            
+            responsive: [
+
+                {
+                    breakpoint: 1231,
+                    settings: {
+                        infinite: true,
+                        dots: true,
+                        slidesToShow: 2,
+                        
+                    },
+                },
+            ],
         });
     });
+
+    const toggleMenuBtn = $('.nav-toggle');
+    const nav = $('.nav__container');
+    const toggleMenuBtnActiveClass = 'nav-toggle--is-toggled';
+    const navActiveClass = 'nav__container--is-open';
+        
+    toggleMenuBtn.click(function (e) {
+        $(this).toggleClass(toggleMenuBtnActiveClass);
+        nav.toggleClass(navActiveClass);
+    });
+
+        $('.nav__link, .nav__btn-close').click(() => {
+        nav.removeClass(navActiveClass);
+        toggleMenuBtn.removeClass(toggleMenuBtnActiveClass);
+    });
+
+    const wnd = $(window);
+    const header = $('.header');
+    const headerShowPoint = 1;
+
+    if (header) {
+        const checkScroll = function () {
+            const top = wnd.scrollTop();
+            if (top > headerShowPoint && header.hasClass('header--transparent')) {
+                header.removeClass('header--transparent');
+            } else if (top <= headerShowPoint && !header.hasClass('header--transparent')) {
+                header.addClass('header--transparent');
+            }
+        };
+
+        checkScroll();
+
+        wnd.scroll(() => {
+            checkScroll();
+        });
+    }
 }(jQuery));
-
-
-
 
 
 $(function() {
@@ -23,14 +65,15 @@ $(function() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const priceSlider = document.getElementById('range__slider');
+    const squareSlider = document.getElementById('range__slider-square');
+    
     var formatValue = wNumb({decimals: 0, thousand: '&nbsp'})
-    noUiSlider.create(priceSlider, {
+    noUiSlider.create(squareSlider, {
         start: 125000,
         tooltips: true,
         connect: [true,false],
         padding: 0,
-        step: 1000,
+        step: 100,
         tooltips: [formatValue],
        
         range: {
@@ -46,49 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 return parseInt(value);
             }
         }
-    });   
+    }); 
+    squareSlider.noUiSlider.on('change', (values, handle) => {
+        const square = document.getElementById("square");
+        console.log(values);
+        console.log(square.value);
+        square.value = values;
+    });
 });
-
-        // const toggleMenuBtn = $('.nav-toggle');
-        // const nav = $('.nav');
-        // const toggleMenuBtnActiveClass = 'nav-toggle--is-toggled';
-        // const navActiveClass = 'nav--is-open';
-        
-        // toggleMenuBtn.click(function (e) {
-        //     $(this).toggleClass(toggleMenuBtnActiveClass);
-        //     nav.toggleClass(navActiveClass);
-        // });
-        
-        // $('.nav__link').click(() => {
-        //     nav.removeClass(navActiveClass);
-        //     toggleMenuBtn.removeClass(toggleMenuBtnActiveClass);
-        // });
-        //
-        // $('#nav').onePageNav({
-        //     currentClass: 'nav__item--is-current',
-        //     scrollOffset: 80,
-        //     filter: ':not(.callback-btn)',
-        // });
-        //
-        // $('.js-gallery').slick({
-        //     prevArrow: '<button type="button" class="btn-arrow btn-arrow--prev"></button>',
-        //     nextArrow: '<button type="button" class="btn-arrow btn-arrow--next"></button>',
-        // });
-        //
-        // $('.js-hero-slider').slick({
-        //     arrows: false,
-        //     dots: true,
-        //     autoplay: true,
-        //     fade: true,
-        //     autoplaySpeed: 4000,
-        // });
-        //
-        // $('.formJs').each(function () {
-        //     const form = $(this);
-        //     const url = form.attr('action');
-        //
-        //     form.on('submit', (event) => {
-        //         event.preventDefault();
-        //         AjaxFormRequest(form, url);
-        //     });
-        // });  

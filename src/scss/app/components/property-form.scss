@@ -1,0 +1,238 @@
+.property-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: em(43 24 33, $fz);
+  background: $gradient_blue;
+
+  @media (max-width: $media_large) {
+    padding: em(33 20, $fz);
+  }
+
+  @media (max-width: $media_extra_small) {
+    padding: em(43 40 33, $fz);
+  }
+
+  &__label {
+    $fz: 14;
+    margin-bottom: em(3, $fz);
+
+    padding-left: em(7, $fz);
+    font-size: em($fz, $fz_base);
+    line-height: em(22, $fz);
+  }
+
+  &__item {
+    margin-bottom: em(20, $fz);
+
+    display: flex;
+    flex-direction: column;
+
+    &--filter {
+      margin-bottom: em(30, $fz);
+
+      flex-direction: row;
+      padding-right: em(22, $fz);
+      padding-left: em(8, $fz);
+
+      @media (min-width: $media_small) and (max-width: $media_medium) {
+        margin-top: em(20, $fz);
+
+        justify-content: center;
+      }
+    }
+  }
+
+  &__range {
+    margin-bottom: em(11, $fz);
+  }
+  
+  &__range-value {
+    @media (min-width: $media_small) and (max-width: $media_medium) {
+      display: grid;
+      align-items: end;
+      grid-template-columns: 1fr 1fr;
+      column-gap: em(25, $fz);    
+    }
+  }
+
+  &__submit {
+    margin-right: auto;
+    margin-left: auto;
+
+    border: em(2, $fz) solid $accent;
+    background: $gradient_form_submit;
+    
+    &:hover,
+    &:focus {
+      background: $gradient_blue;
+    }
+  }
+}
+
+.choosing-property {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $media_extra_small - 1px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    &:nth-child(n+2) {
+      margin-left: em(38, $fz);
+
+      @media (max-width: $media_large) {
+        margin-left: em(20, $fz);
+      }
+
+      @media (max-width: $media_medium) {
+        margin-left: em(35, $fz);
+      }
+
+      @media (max-width: $media_extra_small - 1px) {
+        margin-top: em(35, $fz);
+        margin-left: 0;
+      }
+    }   
+  }
+
+  &__label {
+    $fz: 18;
+    min-width: em(130, $fz);
+    min-height: em(45, $fz);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $gradient_blue_light_blue;
+    text-transform: uppercase;
+    font-size: em($fz, $fz_base);
+    font-weight: 700;
+    line-height: em(30, $fz);
+  }
+
+  &__input:checked + label {
+    outline: em(2, $fz) solid $accent;
+    outline-offset: em(-1, $fz);
+    background: $white;
+    color: $black;
+  }
+  
+  &__input:hover + label {
+    outline: em(2, $fz) solid $accent;
+    outline-offset: em(-1, $fz);
+    background: $gradient_form_submit;
+    color: inherit;
+  }
+
+  &__input:focus + label {
+    outline: em(4, $fz) solid $accent;
+    outline-offset: em(-4, $fz);
+  }
+}
+
+.select {
+  &__list {
+    @media (min-width: $media_small) and (max-width: $media_medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: em(25, $fz);
+    }
+  }
+
+  &__item {
+    &:nth-child(n+2) {
+      margin-top: em(25, $fz);
+
+      @media (min-width: $media_small) and (max-width: $media_medium) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.range {
+  &__bar {
+    margin-top: em(30, $fz);
+    margin-bottom: em(6, $fz);
+  }
+
+  &__span {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__span-value {
+    $fz: 14;
+    font-size: em($fz, $fz_base);
+  }
+}
+
+.price {
+  &__inputs {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: em(38, $fz);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      width: em(12, $fz);
+      height: em(2, $fz);
+      margin-right: em(-5, $fz);
+
+      content: '';
+
+      display: block;
+      background-color: $white;
+    }
+  }
+
+  &__input {
+    $fz: 14;
+    width: 100%;
+    min-height: em(40, $fz);
+
+    padding: em(13 20, $fz);
+    outline: em(2, $fz) solid $accent;
+    outline-offset: em(-2, $fz);
+    background-color: $white;
+    color: $dark_gray;
+    font-size: em($fz, $fz_base);
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+
+      margin: 0;
+    }
+  }
+}
+
+.filter {
+  &__icon {
+    $fz: 21;
+    font-size: em($fz, $fz_base);
+  }
+
+  &__button {
+    margin-top: em(-2, $fz);
+    margin-left: auto;
+
+    @media (min-width: $media_small) and (max-width: $media_medium) {
+      margin-left: em(25, $fz);
+    }
+  }
+}

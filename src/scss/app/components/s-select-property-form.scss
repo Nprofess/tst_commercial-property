@@ -1,9 +1,4 @@
-/* ======================================
-  Selectric v1.13.0
-====================================== */
-
-/* Items box */
-.s-selectric {
+.s-select-property-form {
   .selectric-wrapper {
     position: relative;
 
@@ -23,7 +18,7 @@
     padding: em(3 20 3 21, $fz);
 
     overflow: hidden;
-    border: em(2, $fz) solid #4185EA;
+    border: em(2, $fz) solid $accent;
     
     background-color: $white;
     color: $black;
@@ -72,7 +67,7 @@
 
       content: '';
       background-image: url('../img//arrow.svg');
-      
+      background-repeat: no-repeat;
     }
   }
 
@@ -81,6 +76,7 @@
 
     .selectric::after {
       background-image: url('../img//arrow-rotate.svg');
+      background-repeat: no-repeat;
     }
 
     .selectric-items {
@@ -162,9 +158,10 @@
     top: 100%;
     left: em(4, $fz);
     z-index: -1;
-    width: em(292, $fz) !important;
+    width: 98% !important;
 
     display: none;
+    box-shadow: em(1 3 4 rgba(35, 82, 152, 0.25), $fz);
 
     ::-webkit-scrollbar-track {
       margin-top: em(3, $fz);
@@ -192,7 +189,8 @@
       max-height: em(164, $fz);
       margin-right: em(4, $fz);
 
-      padding-top: em(10, $fz);
+      padding-top: em(7, $fz);
+      padding-bottom: em(7, $fz);
 
       overflow: auto;
     }
@@ -215,17 +213,13 @@
       }
 
       &:hover {
-        background: linear-gradient(0deg, #175EC7 0%, #0BC4FF 100%);
+        background: $gradient_user_info;
         color: $white;
       }
     }
 
-    // .selected {
-    //   display: none;
-    // }
-
     .highlighted {
-      background: linear-gradient(0deg, #175EC7 0%, #0BC4FF 100%);
+      background: $gradient_user_info;
       color: $white;
     }
 

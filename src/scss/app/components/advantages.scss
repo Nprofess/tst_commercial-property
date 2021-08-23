@@ -1,0 +1,128 @@
+.advantages {
+  &__container {
+    @media (max-width: $media_extra_small) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    @media (max-width: $media_extra_small - 1px) {
+      padding-right: em(10, $fz);
+      padding-left: em(10, $fz);
+    }
+  }
+
+  &__item {
+    max-width: em(346, $fz);
+    min-height: em(380, $fz);
+
+    @media (max-width: $media_large) {
+      max-width: em(320, $fz);
+    }
+
+    @media (max-width: 734px) {
+      max-width: em(346, $fz);
+    }
+
+    @media (max-width: $media_extra_small - 1px) {
+      max-width: em(296, $fz);
+    }
+  }
+
+  &__list {
+    @media (max-width: $media_large) {
+      max-width: em(703, $fz);
+      margin-top: em(54, $fz);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (max-width: 734px) {
+      max-width: em(346, $fz);
+    }
+
+    @media (max-width: $media_extra_small - 1px) {
+      max-width: em(300, $fz);
+    }
+  }
+}
+
+.advantages-item {
+  padding: em(33 10 40 22, $fz);
+  
+  background: $gradient_advantages;
+  color: $white;
+
+  @media (max-width: $media_large) { 
+    padding-bottom: em(10, $fz);
+  }
+
+  &__description {
+    margin-bottom: em(44, $fz);
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    gap: em(17, $fz);
+
+    @media (min-width: $media_small) and (max-width: $media_large) {   
+      margin-bottom: em(30, $fz);
+    }
+  }
+
+  &__icon {
+    &--realty {
+      width: em(53, $fz);
+      height: em(53, $fz);
+    }
+
+    &--interest {
+      width: em(53, $fz);
+      height: em(53, $fz);
+    }
+
+    &--investment {
+      width: em(42, $fz);
+      height: em(53, $fz);
+    }
+  }
+
+  &__title {
+    $fz: 22;
+    font-size: em($fz, $fz_base);
+    font-weight: 700;
+    line-height: em(25, $fz);
+
+    @media (max-width: $media_large) { 
+      $fz: 20;
+      font-size: em($fz, $fz_base);
+    }
+  }
+
+  &__elem {
+    margin-left: em(25, $fz);
+    text-indent: em(-25, $fz);
+    line-height: em(21, $fz);
+
+    &:not(:last-child) {
+      margin-bottom: em(21, $fz);
+
+      @media (min-width: $media_small) and (max-width: $media_large) {  
+        margin-bottom: em(15, $fz);
+      }
+    }
+
+    &::before {
+      width: em(9, $fz);
+      height: em(9, $fz);
+      margin-right: em(17, $fz);
+
+      content: '';
+
+      display: inline-block;
+      
+      vertical-align: middle;
+      background: $gradient_blue_light_blue;
+      transform: matrix(-0.71, -0.69, -0.72, 0.71, 0, 0);
+    }
+  }
+}

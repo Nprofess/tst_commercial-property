@@ -94,6 +94,16 @@ function fonts() {
         .pipe(dest('dist/fonts/'));
 }
 
+function favicon() {
+    return src('src/favicon.ico')
+        .pipe(dest('dist/'));
+}
+
+function webmanifest() {
+    return src('src/manifest.webmanifest')
+        .pipe(dest('dist/'));
+}
+
 function root() {
     return src('src/assets/root/**/*')
         .pipe(dest('dist/'));
@@ -113,6 +123,8 @@ function startwatch() {
     watch('src/**/*.html', html);
     watch('src/assets/img/**/*', images);
     watch('src/assets/icons/**/*', icons);
+    watch('src/favicon.ico', favicon);
+    watch('src/manifest.webmanifest', webmanifest);
 }
 
 exports.browsersync = browsersync;
@@ -122,6 +134,8 @@ exports.styles = styles;
 exports.images = images;
 exports.icons = icons;
 exports.fonts = fonts;
+exports.favicon = favicon;
+exports.webmanifest = webmanifest;
 exports.root = root;
 exports.cleanimg = cleanimg;
 exports.cleandist = cleandist;
@@ -129,6 +143,8 @@ exports.default = parallel(
     images,
     icons,
     fonts,
+    favicon,
+    webmanifest,
     root,
     html,
     styles,

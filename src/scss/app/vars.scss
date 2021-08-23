@@ -2,13 +2,23 @@ $fz_base: 16;
 $fz: $fz_base;
 
 $font_family: 'Roboto', sans-serif;
-$font_other: 'Montserrat', sans-serif;
 
 $white: #FFFFFF;
-$black: #0F2240,;
+$black: #0F2240;
 $accent: #4185EA;
+$gray: #C4C4C4;
+$dark_gray: #5A5859;
+$header: #6B6A6E;
+$border_user_info: #ADBFCD;
+$nav_active: #245194;
 
- 
+$gradient_blue_light_blue: linear-gradient(180deg, #175EC7 0%, #0BC4FF 100%);
+$gradient_blue: linear-gradient(180deg, #245194 0%, #1E69D9 100%);
+$gradient_transparent_blue: linear-gradient(180deg, rgba(36, 81, 148, 0) 47.38%, #1E69D9 100%);
+$gradient_advantages: linear-gradient(180deg, #1A2024 0%, #374253 100%);
+$gradient_user_info: linear-gradient(0deg, #175EC7 0%, #0BC4FF 100%);
+$gradient_form_submit: linear-gradient(360deg, #245194 3.31%, #1E69D9 100%);
+
 
 $media_large: 1230px;
 $media_medium: 1000px;

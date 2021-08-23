@@ -23,8 +23,5 @@
     "stylelint-config-airbnb": "^0.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.19.0"
-  },
-  "dependencies": {
-    "jquery": "^3.6.0"
   }
 }

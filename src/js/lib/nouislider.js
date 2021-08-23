@@ -1053,6 +1053,7 @@
                     handle.children[0].setAttribute("aria-valuemax", max);
                     handle.children[0].setAttribute("aria-valuenow", now);
                     handle.children[0].setAttribute("aria-valuetext", text);
+                    handle.children[0].setAttribute("aria-label", "Ползунок выбора площади");
                 });
             });
         }

@@ -1,0 +1,46 @@
+.advantages-slider {
+  & .slick-dots {
+    margin-top: em(32, $fz);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  & .slick-dots li {
+    width: em(9, $fz);
+    height: em(9, $fz);
+  
+    border-radius: 50%;
+    background: $gray;
+    color: transparent;
+  
+    &:nth-child(n+2) {
+      margin-left: em(8, $fz);
+    }
+  }
+  
+  & .slick-dots .slick-active {
+    background: $gradient_blue_light_blue;
+  }
+  
+  & .slick-slide {
+    margin-right: em(38, $fz);
+    margin-left: em(38, $fz);
+  
+    @media (max-width: $media_large) {
+      margin-right: em(32, $fz);
+      margin-left: em(32, $fz);
+    }
+  
+    @media (max-width: 734px) {
+      margin-right: em(22, $fz);
+      margin-left: em(22, $fz);
+    }
+  
+    @media (max-width: $media_extra_small - 1px) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }  
+}
