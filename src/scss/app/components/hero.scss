@@ -17,7 +17,7 @@
   @media (max-width: $media_extra_small) {
     padding-top: em(177, $fz);
     padding-bottom: em(214, $fz);
-    background: url('../../img//hero-bg-s.jpg') top / cover no-repeat, rgba(0, 0, 0, 0.32);
+    background: url('../../img//hero-bg-mobile.jpg') top / cover no-repeat, rgba(0, 0, 0, 0.32);
   }
 
   &__container {
